@@ -19,29 +19,46 @@ env/
 .vscode/
 .idea/
 
-# Operating system files
+# Operating system and macOS metadata
 .DS_Store
 Thumbs.db
+__MACOSX/
 
-# Raw and processed datasets
-data/raw/
-data/processed/
+# Raw datasets
+data/raw/*
+!data/raw/.gitkeep
+
+# Processed datasets
+data/processed/*
+!data/processed/.gitkeep
 
 # Model checkpoints
-artifacts/checkpoints/
+artifacts/checkpoints/*
+!artifacts/checkpoints/.gitkeep
 *.pt
 *.pth
 *.ckpt
 
+# Generated training artifacts
+artifacts/training_history.csv
+artifacts/vocabulary.json
+
 # Training logs
-artifacts/logs/
+artifacts/logs/*
+!artifacts/logs/.gitkeep
 runs/
 wandb/
+
+# Testing and tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Packaging files
+build/
+dist/
+*.egg-info/
 
 # Temporary files
 *.tmp
 *.log
-
-# macOS metadata
-__MACOSX/
-.DS_Store
